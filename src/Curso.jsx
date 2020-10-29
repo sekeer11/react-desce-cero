@@ -1,13 +1,20 @@
 import React from 'react'
 
+const curso = {
+    "title":"React desde cero",
+    "imagen":"http://localhost:3000/1.jpg",
+    "price":"20USD"
+}
+
 const Curso = () => (
     <article className="card">
+        
         <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
-            <img src="http://localhost:3000/1.jpg" alt="curso" />
+            <img src={curso.imagen} alt="curso" />
         </div>
         <div className="card__data s-border s-radius-br s-radius-bl s-pxy-2">
             <h3 className="t5 s-mb-2 s-center"> 
-                Programación orientada a objetos con Go 
+                { curso.title }
             </h3>
             <div className="s-mb-2 s-main-center">
                 <div className="card__teacher s-cross-center">
@@ -20,7 +27,7 @@ const Curso = () => (
                 </div>
             </div>
             <div className="s-main-center">
-                <a className="button--ghost-alert button--tiny" href="http://localhost:3000/">$ 20USD</a>
+                <a className="button--ghost-alert button--tiny" href="http://localhost:3000/">{ `$ ${curso.price}` }</a>
             </div>
         </div>
     </article>
