@@ -2,6 +2,21 @@ import React from 'react';
 import "./styles/styles.scss";
 import Curso from './Curso';
 
+const cursos = [
+    {
+        titulo: "React desde cero",
+        imagen: 'http://localhost:3000/s3.jpg',
+        profesor: "Profesor X",
+        price: "20 USD"
+    },
+    {
+        titulo: "Programacion GO",
+        imagen: 'http://localhost:3000/1.jpg',
+        profesor: "Profesor Z",
+        price: "10 USD"
+    }
+]
+
 const App = () => (
     <>
         <div className="main-banner img-container l-section" id="main-banner">
@@ -17,18 +32,9 @@ const App = () => (
             </div>
         </div>
         <div className="ed-grid m-grid-3">
-            <Curso
-                title = "React desde cero"
-                imagen = 'http://localhost:3000/s3.jpg'
-                profesor = "Profesor X"
-                price = "20 USD"
-            />
-            <Curso 
-                title = "Programacion GO"
-                imagen = 'http://localhost:3000/1.jpg'
-                profesor = "Profesor Z"
-                price = "10 USD"
-            />
+            {
+                cursos.map( c => <Curso title = {c.titulo} imagen = {c.imagen} profesor = {c.profesor} price = {c.price} /> )
+            }
         </div>
     </>
 )
